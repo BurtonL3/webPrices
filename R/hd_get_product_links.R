@@ -3,8 +3,7 @@
 #' @return Returns a vector of strings with product urls
 #' @export
 #' @examples
-#' \dontrun
-#' {
+#' \dontrun{
 #' x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
 #' links <- hd_get_product_links(x) %>%
 #' hd_add_main_url %>%

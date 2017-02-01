@@ -5,8 +5,7 @@
 #' @return Returns a partial character string from the full input
 #' @export
 #' @examples
-#' \dontrun
-#' {
+#' \dontrun{
 #' x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
 #' links <- hd_get_product_links(x)
 #' id <- slit(links[1], 5)

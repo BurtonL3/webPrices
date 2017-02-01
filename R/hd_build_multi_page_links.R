@@ -4,8 +4,7 @@
 #' @return Returns of vector of character strings containing urls for all pages of search results for a catalog of products on HD
 #' @export
 #' @examples
-#' \dontrun
-#' {
+#' \dontrun{
 #' x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
 #' links <- hd_build_multi_page_links(x)
 #' all_prods_in_cat <- map(links, hd_get_product_links)
