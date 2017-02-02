@@ -16,8 +16,7 @@ Returns the model number from a given HD product link
 Scrape and format model number for a given product from HD product page
 }
 \examples{
-\dontrun
-{
+\dontrun{
 x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
 links <- hd_get_product_links(x)
 hd_product_model(links[1])

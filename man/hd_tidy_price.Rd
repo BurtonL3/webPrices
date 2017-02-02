@@ -16,8 +16,7 @@ Returns a data frame with the product's model number and price from web
 Get product and price details from HD web page in a tidy format
 }
 \examples{
-\dontrun
-{
+\dontrun{
 x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
 links <- hd_get_product_links(x)
 map(links, hd_tidy_price) \%>\% reduce(rbind)

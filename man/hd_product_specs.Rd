@@ -16,8 +16,7 @@ Returns a data frame of product characteristics and specs
 Scrape and format product specifications from a product link on Home Depot.com
 }
 \examples{
-\dontrun
-{
+\dontrun{
 x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
 links <- hd_get_product_links(x)
 hd_product_specs(links[1])
