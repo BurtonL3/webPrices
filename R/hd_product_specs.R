@@ -10,6 +10,10 @@
 #' }
 hd_product_specs <- function(x) {
 
+  id <- slit(link = x, pos = 5)
+  sku <- slit(link = x, pos = 6)
+  modelno <- hd_product_model(x)
+
   dat <- read_html(x) %>%
     html_nodes('div') %>%
     html_text(trim = T) %>%
@@ -56,6 +60,8 @@ hd_product_specs <- function(x) {
   wrnty_df <- data_frame(desc, data, table = "warranty")
 
   df <- rbind(df, wrnty_df)
+
+  df <- df %>% mutate(id = id, sku = sku, modelno = modelno)
 
   return(df)
 }
