@@ -14,6 +14,7 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
 Suggests: testthat
+<<<<<<< HEAD
 Imports:
     rvest,
     tidyverse,
@@ -21,3 +22,6 @@ Imports:
     dplyr,
     tidyr,
     purrr
+=======
+Imports: 
+>>>>>>> origin/master

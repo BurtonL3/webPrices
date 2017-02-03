@@ -1,10 +1,10 @@
-#' Helper functions
+#' Helper functions for scraping specs
 #'
 #' @param x a character vector
-#' @name help
+#' @name helps
 NULL
 ## NULL
-#' @rdname help
+#' @rdname helps
 is_col_head <- function(x) {
   x %in% c(
     "Dimensions",
@@ -14,22 +14,22 @@ is_col_head <- function(x) {
   )
 }
 
-#' @rdname help
+#' @rdname helps
 is_in_dimensions_table <- function(x) {
   x %in% c("Dimensions", "Details")
 }
 
-#' @rdname help
+#' @rdname helps
 is_in_details_table <- function(x) {
   x %in% c("Details", "Warranty / Certifications")
 }
 
-#' @rdname help
+#' @rdname helps
 is_in_warranty_table <- function(x) {
   x %in% c("Warranty / Certifications", "More Products With These Features")
 }
 
-#' @rdname help
+#' @rdname helps
 is_in_product_features_table <- function(x) {
   x %in% c("More Products With These Features", "Search")
 }
