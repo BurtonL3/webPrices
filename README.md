@@ -13,5 +13,13 @@ When complete, the hope for this project is to provide tools for scraping prices
 
 The first set of functions that comprise the package are to be used to extract pricing and product data from home depot.com
 
-Happy pricing.
+A brief example of a workflow is shown below.
  
+``` r
+    main <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
+    pgs <- hd_build_multi_page_links(main)
+    prods <- purrr::map(pgs, hd_get_product_links)
+    hd_tidy_scrape(prods)
+    ```
+    
+ Happy pricing.
