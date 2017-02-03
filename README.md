@@ -1,6 +1,15 @@
 # webPrices
 webPrices: Tools to scrape prices with rvest and the tidyverse
 
+-   Install it from github
+
+``` r
+    if (packageVersion("devtools") < 1.6) {
+      install.packages("devtools")
+    }
+    devtools::install_github("burtonlueth/webPrices")
+```
+
 webPrices is a set of tools for harvesting pricing from big box stores (e.g. Home Depot and Lowes) and Amazon online. It has
 two main goals:
  
