@@ -1,5 +1,5 @@
 # webPrices
-webPrices: Scrape online prices with rvest
+webPrices: Tools to scrape prices with rvest and the tidyverse
 
 webPrices is a set of tools for harvesting pricing from big box stores (e.g. Home Depot and Lowes) and Amazon online. It has
 two main goals:
