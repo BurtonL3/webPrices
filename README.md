@@ -13,7 +13,8 @@ When complete, the hope for this project is to provide tools for scraping prices
 
 The first set of functions that comprise the package are to be used to extract pricing and product data from home depot.com
 
-A brief example of a workflow is shown below. The function hd_tidy_scrape() returns an object ```d```. It's a list of tibbles.
+A brief example of a workflow is shown below. The function hd_tidy_scrape() returns an object ```d``` in the global
+environment and it's a list of tibbles.
 
 ``` r
     main <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
