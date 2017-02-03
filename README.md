@@ -20,6 +20,6 @@ A brief example of a workflow is shown below.
     pgs <- hd_build_multi_page_links(main)
     prods <- purrr::map(pgs, hd_get_product_links)
     hd_tidy_scrape(prods)
-    ```
-    
- Happy pricing.
+```
+
+Happy pricing.
