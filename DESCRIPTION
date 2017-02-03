@@ -15,8 +15,3 @@ LazyData: true
 RoxygenNote: 5.0.1
 Suggests: testthat
 Imports: 
-    rvest,
-    dplyr,
-    tidyr,
-    purrr,
-    stringr
