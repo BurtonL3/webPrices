@@ -11,7 +11,6 @@ load <- c("ggplot2", "tibble", "tidyr", "readr", "purrr", "dplyr", "rvest")
     lapply(needed, library, character.only = TRUE, warn.conflicts = FALSE)
   )
 
-  tidyverse_conflicts()
 }
 
 is_attached <- function(x) {
