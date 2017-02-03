@@ -34,11 +34,12 @@ environment and it's a list of tibbles.
 
 ``` r
     main <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
-    pgs <- hd_build_multi_page_links(main)
-    prods <- purrr::map(pgs, hd_get_product_links)
+    pages <- hd_build_multi_page_links(main)
+    prods <- purrr::map(pages, hd_get_product_links)
+    prods <- prods %>% unlist %>% hd_add_main_url
     hd_tidy_scrape(prods)
     df <- reduce(d, rbind)
 ```
 
 
-Happy pricing.
+Happy pricing!
