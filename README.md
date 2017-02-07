@@ -10,7 +10,7 @@ webPrices is a set of tools for harvesting pricing from online. It has two main 
 
 ``` r
 if (packageVersion("devtools") < 1.6) {
-      install.packages("devtools")
+  install.packages("devtools")
     }
 devtools::install_github("burtonlueth/webPrices")
 ```
