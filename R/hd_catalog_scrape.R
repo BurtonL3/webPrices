@@ -7,9 +7,9 @@
 #' x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
 #' hd_catalog_scrape(x)
 #' }
-hd_category_scrape <- function(x) {
+hd_catalog_scrape <- function(x) {
   pages <- x %>% hd_build_multi_page_links %>% unlist
   prods <- map(pages, hd_get_product_links) %>% unlist %>% hd_add_main_url
   hd_tidy_scrape(prods)
-  d %>% reduce(rbind)
+  d[grepl("modelno", map(d, ~names(.x[3])))] %>% reduce(rbind)
 }

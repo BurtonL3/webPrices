@@ -2,7 +2,7 @@
 % Please edit documentation in R/hd_product_specs.R
 \name{hd_product_specs}
 \alias{hd_product_specs}
-\title{Scrape and format product specifications from a product link on Home Depot.com}
+\title{Scrape and format product specifications from a product's web page}
 \usage{
 hd_product_specs(x)
 }
@@ -10,16 +10,15 @@ hd_product_specs(x)
 \item{x}{A string, a connection, or a raw vector.}
 }
 \value{
-Returns a data frame of product characteristics and specs
+Returns a list of tibbles of product characteristics and specs
 }
 \description{
-Scrape and format product specifications from a product link on Home Depot.com
+Scrape and format product specifications from a product's web page
 }
 \examples{
 \dontrun{
-x <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
-links <- hd_get_product_links(x)
-hd_product_specs(links[1])
+rx142 <- "http://www.homedepot.com/p/Cerrowire-250-ft-14-2-White-NM-B-Wire-147-1472G/202304609"
+hd_product_specs(rx142)
 }
 }
 

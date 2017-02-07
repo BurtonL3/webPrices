@@ -2,7 +2,7 @@
 
 export(hd_add_main_url)
 export(hd_build_multi_page_links)
-export(hd_category_scrape)
+export(hd_catalog_scrape)
 export(hd_get_product_links)
 export(hd_product_model)
 export(hd_product_price)
