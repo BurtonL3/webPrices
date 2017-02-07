@@ -9,10 +9,10 @@ webPrices is a set of tools for harvesting pricing from online. It has two main 
 -   Install it from github
 
 ``` r
-    if (packageVersion("devtools") < 1.6) {
+if (packageVersion("devtools") < 1.6) {
       install.packages("devtools")
     }
-    devtools::install_github("burtonlueth/webPrices")
+devtools::install_github("burtonlueth/webPrices")
 ```
 
 The package is designed as part of an overall pricing strategy for a b2b distribution company. To summarize the overall
@@ -30,13 +30,18 @@ environment and it's a list of tibbles.
 
 
 ``` r
-    main <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
-    pages <- hd_build_multi_page_links(main)
-    prods <- purrr::map(pages, hd_get_product_links)
-    prods <- prods %>% unlist %>% hd_add_main_url
-    hd_tidy_scrape(prods)
-    df <- reduce(d, rbind)
+main <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
+pages <- hd_build_multi_page_links(main)
+prods <- purrr::map(pages, hd_get_product_links)
+prods <- prods %>% unlist %>% hd_add_main_url
+hd_tidy_scrape(prods)
+df <- reduce(d, rbind)
 ```
+Or a more concise way to accomplish the same results:
 
+``` r
+main <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
+df <- hd_catalog_scrape(main)
+```
 
 Happy pricing!
