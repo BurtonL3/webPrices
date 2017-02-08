@@ -9,11 +9,11 @@
 #' hd_product_price(links[1])
 #' }
 hd_product_price <- function(x) {
-    read_html(x, encoding = "UTF-8") %>%
-    html_nodes("#ajaxPrice") %>%
-    html_text() %>%
-    str_replace_all("\r\n|\\$|\\,", "") %>%
-    str_trim() %>%
+  xml2::read_html(x, encoding = "UTF-8") %>%
+    rvest::html_nodes("#ajaxPrice") %>%
+    rvest::html_text() %>%
+    stringr::str_replace_all("\r\n|\\$|\\,", "") %>%
+    stringr::str_trim() %>%
     as.numeric
 }
 

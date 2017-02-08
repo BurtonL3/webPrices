@@ -13,7 +13,7 @@ hd_tidy_price <- function(x) {
   sku <- slit(link = x, pos = 6)
   price <- hd_product_price(x)
   modelno <- hd_product_model(x)
-  df <- data_frame(
+  df <- dplyr::data_frame(
     id = id, sku = sku, modelno = modelno, price = price, time = Sys.time())
   return(df)
 }

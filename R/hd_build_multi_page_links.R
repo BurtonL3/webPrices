@@ -9,15 +9,24 @@
 #' links <- hd_build_multi_page_links(x)
 #' all_prods_in_cat <- map(links, hd_get_product_links)
 #' }
-hd_build_multi_page_links <- function(x, pages = max_page) {
+hd_build_multi_page_links <- function(x, pages = pages_max) {
+
   x <- paste0(x, "?catStyle=ShowProducts")
-  max_page <- read_html(x) %>%
-    html_nodes(".hd-pagination__link") %>%
-    html_text() %>%
+
+  pages_max <- xml2::read_html(x) %>%
+    rvest::html_nodes(".hd-pagination__link") %>%
+    rvest::html_text() %>%
     as.numeric %>%
     max(na.rm = TRUE)
-  i <- seq(24, (pages - 1) * 24, 24)
-  y <- paste0("&Nao=", i, "&Ns=None") %>% paste0(x, .)
-  x <- c(x, y)
-  return(x)
+
+  if (pages_max == -Inf) {
+    return(x)
+
+  } else {
+    i <- seq(from = 24, to = (pages - 1) * 24, by = 24)
+    y <- paste0("&Nao=", i, "&Ns=None") %>% paste0(x, .)
+    x <- c(x, y)
+    return(x)
+
+  }
 }

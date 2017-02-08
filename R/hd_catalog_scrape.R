@@ -9,7 +9,7 @@
 #' }
 hd_catalog_scrape <- function(x) {
   pages <- x %>% hd_build_multi_page_links %>% unlist
-  prods <- map(pages, hd_get_product_links) %>% unlist %>% hd_add_main_url
+  prods <- purrr::map(pages, hd_get_product_links) %>% unlist %>% hd_add_main_url
   hd_tidy_scrape(prods)
-  d[grepl("modelno", map(d, ~names(.x[3])))] %>% reduce(rbind)
+  d[grepl("modelno", purrr::map(d, ~names(.x[3])))] %>% purrr::reduce(rbind)
 }

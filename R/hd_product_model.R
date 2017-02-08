@@ -9,9 +9,9 @@
 #' hd_product_model(links[1])
 #' }
 hd_product_model <- function(x) {
-  read_html(x, encoding = "UTF-8") %>%
-    html_nodes(".modelNo") %>%
-    html_text() %>%
-    str_replace_all("\r\n|Model # ", "") %>%
-    str_trim()
+  xml2::read_html(x, encoding = "UTF-8") %>%
+    rvest::html_nodes(".modelNo") %>%
+    rvest::html_text() %>%
+    stringr::str_replace_all("\r\n|Model # ", "") %>%
+    stringr::str_trim()
 }

@@ -11,9 +11,9 @@
 #' reduce(rbind)
 #' }
 hd_get_product_links <- function(x) {
-  read_html(x) %>%
-    html_nodes("a") %>%
-    html_attr("href") %>%
+  xml2::read_html(x) %>%
+    rvest::html_nodes("a") %>%
+    rvest::html_attr("href") %>%
     .[!is.na(.)] %>%
     .[grepl("/p/", .)] %>%
     unique %>%

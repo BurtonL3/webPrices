@@ -8,8 +8,8 @@
 #' hd_product_specs(rx142)
 #' }
 hd_product_specs <- function(x) {
-  read_html(x) %>%
-    html_nodes("table") %>%
-    html_table() %>%
+  xml2::read_html(x) %>%
+    rvest::html_nodes("table") %>%
+    rvest::html_table() %>%
     setNames(nm = c("dimensions", "details", "warranty"))
 }

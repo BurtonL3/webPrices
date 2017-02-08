@@ -4,7 +4,7 @@
 \alias{hd_build_multi_page_links}
 \title{Construct the urls for the multiple return pages for a given catalog}
 \usage{
-hd_build_multi_page_links(x, pages = max_page)
+hd_build_multi_page_links(x, pages = pages_max)
 }
 \arguments{
 \item{x}{A string, a connection, or a raw vector.}
