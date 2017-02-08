@@ -9,8 +9,7 @@
 #' links <- hd_build_multi_page_links(x)
 #' all_prods_in_cat <- map(links, hd_get_product_links)
 #' }
-hd_build_multi_page_links <- function(x, pages = pages_max) {
-
+hd_build_multi_page_links <- function (x, pages = pages_max) {
   x <- paste0(x, "?catStyle=ShowProducts")
 
   pages_max <- xml2::read_html(x) %>%
@@ -19,12 +18,18 @@ hd_build_multi_page_links <- function(x, pages = pages_max) {
     as.numeric %>%
     max(na.rm = TRUE)
 
-  if (pages_max == -Inf) return(x)
-
+  if (pages_max == -Inf) {
+    return(x)
+  }
   else {
-    i <- seq(from = 24, to = (pages * 24), by = 24)
+    i <- seq(from = 24, to = pages * 24, by = 24)
     y <- paste0("&Nao=", i, "&Ns=None") %>% paste0(x, .)
     x <- c(x, y)
+
+    if (isTRUE(next_page(x[length(x) - 1]) == "http://www.homedepot.com")) {
+      x <- x[-(length(x))]
+      return(x)
+    }
 
     return(x)
   }
