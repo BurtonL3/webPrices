@@ -9,8 +9,8 @@
 #' }
 next_page <- function(x) {
   xml2::read_html(x) %>%
-    rvest::html_nodes("link") %>%
-    rvest::html_attrs %>%
+    html_nodes("link") %>%
+    html_attrs(.) %>%
     .[grepl("next",.)] %>%
     unlist %>%
     .[[2]] %>%
