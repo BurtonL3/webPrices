@@ -19,14 +19,13 @@ hd_build_multi_page_links <- function(x, pages = pages_max) {
     as.numeric %>%
     max(na.rm = TRUE)
 
-  if (pages_max == -Inf) {
-    return(x)
+  if (pages_max == -Inf) return(x)
 
-  } else {
-    i <- seq(from = 24, to = (pages - 1) * 24, by = 24)
+  else {
+    i <- seq(from = 24, to = (pages * 24), by = 24)
     y <- paste0("&Nao=", i, "&Ns=None") %>% paste0(x, .)
     x <- c(x, y)
-    return(x)
 
+    return(x)
   }
 }
