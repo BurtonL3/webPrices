@@ -17,11 +17,12 @@ hd_build_multi_page_links <- function (x, pages = pages_max) {
     return(x)
   }
   else {
-    i <- seq(from = 24, to = pages * 24, by = 24)
+    i <- seq(from = 24, to = (pages -1) * 24, by = 24)
     y <- paste0("&Nao=", i, "&Ns=None") %>% paste0(x, .)
     x <- c(x, y)
-    if (isTRUE(next_page(dplyr::last(x)) == "http://www.homedepot.com")) {
-      x <- x[-dplyr::last(x)]
+    if (next_page(x[length(x)]) != "http://www.homedepot.com") {
+      z <- next_page(x[length(x)])
+      x <- c(x, z)
       return(x)
     }
     return(x)
