@@ -16,18 +16,15 @@ devtools::install_github("burtonlueth/webPrices")
 ```
 
 The package is designed as part of an overall pricing strategy for a b2b distribution company. To summarize the overall
-strategy we intend to connect our resales to public market pricing to better reflect the willingness to pay of customers 
-relative to the traditioanl aggregated market segmentation model, as explained by Stephane Bratu in his article from PPS, 
-slideshare version here: http://www.slideshare.net/StephaneBratu/connecting-b2c-to-b2b-a-top-down-approach-for-industrialdistributors.
+strategy, we intend to connect prices to public market pricing to better reflect customers' willingness-to-pay. 
+Our theory is this approach will outperform the traditioanl aggregated market segmentation model.
 
-When complete, the intention for webPrices is to provide tools for scraping prices from a variety of online B2B market places
-with a focus on wire, electrical and lighting goods, and keeping consistent formatting so that the data may be aggregated. 
+webPrices is designed to provide tools for scraping prices from a several of online market places with a focus on wire, electrical and lighting goods, and keeping consistent formatting so that the data may be aggregated. 
 
 The first set of functions that comprise the package are to be used to extract pricing and product data from home depot.com
 
 A brief example of a workflow is shown below. The function hd_tidy_scrape() returns an object ```d``` in the global
 environment and it's a list of tibbles.
-
 
 ``` r
 main <- "http://www.homedepot.com/b/Electrical-Dimmers-Switches-Outlets/N-5yc1vZc34h"
