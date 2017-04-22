@@ -17,7 +17,7 @@ devtools::install_github("burtonlueth/webPrices")
 
 The package is designed as part of an overall pricing strategy for a b2b distribution company. To summarize the overall
 strategy, we intend to connect prices to public market pricing to better reflect customers' willingness-to-pay. 
-Our theory is this approach will outperform the traditioanl aggregated market segmentation model.
+Our theory is this approach will outperform the traditional aggregated market segmentation model.
 
 webPrices is designed to provide tools for scraping prices from a several of online market places with a focus on wire, electrical and lighting goods, and keeping consistent formatting so that the data may be aggregated. 
 
